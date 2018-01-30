@@ -1,0 +1,48 @@
+﻿body {
+}
+
+#center_puzzle {
+    width:415px;
+    height:415px;
+    margin:0 auto;
+}
+
+#puzzle_container {
+    width:410px;
+    height:410px;
+}
+
+ul#puzzle {
+    padding:0;
+    position:absolute;
+    width:400px;
+    height:400px;
+    margin:0;
+}
+
+div#bar {
+    width:350px;
+    margin:0 auto;
+}
+
+div#bar button {
+    font-size:1.5em;
+    padding:8px;
+    margin:10px;
+}
+
+.block {
+    display:inline-block;
+    width:100px;
+    height:100px;
+    position:absolute;
+    background-image:url(../imag/gameBackground.jpg);
+    background-size:400px 400px;
+    background-position:0 0;
+    transition:all 0.2s;
+    box-shadow:0 0 0.5px 1px #28ae08 inset;
+}
+
+.block:hover {
+    box-shadow:0 0 2px 3px #28ae08 inset;
+}

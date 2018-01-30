@@ -1,0 +1,176 @@
+﻿div {
+    text-align:center;  
+}
+div#title {
+    font-family:"Century Gothic", Futura,Verdana, sans-serif;
+    font-weight:bold;
+}
+div#introduction {
+    font-family:"Century Gothic", Futura,Verdana, sans-serif;
+    font-weight:400;
+}
+div#note {
+    font-family:"Century Gothic", Futura,Verdana, sans-serif;
+    font-weight:400;
+    clear:both;
+}
+
+div#result {
+    font-family:"Century Gothic", Futura,Verdana, sans-serif;
+    font-weight:400;
+    height:30px;
+    transition:all 0.8s;
+}
+
+div.canSee {
+    opacity:1;
+}
+div.cantSee {
+    opacity:0;
+}
+
+div#maze_container {
+    height:201px;
+    width:330px;
+    margin:0 auto;
+}
+
+#maze_container div {
+    float:left;
+    display:inline-block;
+}
+
+div.wall {
+    background-color:#EEEEEE;
+}
+
+div.wallWarning {
+    background-color:red;
+}
+
+div.maze {
+    background-color:white;
+}
+
+div#wall_1 {
+    width:98px;
+    height:33px;
+    border-left:solid 1px;
+    border-top:solid 1px;
+}
+div#wall_2 {
+    width:132px;
+    height:32px;
+    border-top:solid 1px;
+    border-bottom:solid 1px;
+}
+div#wall_3 {
+    width:98px;
+    height:33px;
+    border-top:solid 1px;
+    border-right:solid 1px;
+}
+div#wall_4 {
+    width:98px;
+    height:99px;
+    border-bottom:solid 1px;
+    border-left:solid 1px;
+    border-right:solid 1px;
+}
+div#wall_5 {
+    width:58px;
+    height:64px;
+    border-top:solid 1px;
+    border-left:solid 1px;
+    border-right:solid 1px;
+}
+div#wall_6 {
+    width:98px;
+    height:99px;
+    border-bottom:solid 1px;
+    border-left:solid 1px;
+    border-right:solid 1px;
+}
+div#wall_7 {
+    width:58px;
+    height:35px;
+    border-left:solid 1px;
+    border-right:solid 1px;
+}
+div#wall_8 {
+    width:135px;
+    height:28px;
+    border-top:solid 1px;
+    border-bottom:solid 1px;
+    border-left:solid 1px;
+}
+div#wall_9 {
+    width:58px;
+    height:29px;
+    border-bottom:solid 1px;
+}
+div#wall_10 {
+    width:135px;
+    height:28px;
+    border-top:solid 1px;
+    border-bottom:solid 1px;
+    border-right:solid 1px;
+}
+
+div#wall_container {
+    width:130px;
+    height:100px;
+}
+
+div#maze_1 {
+    width:130px;
+    height:35px;
+}
+div#maze_2 {
+    width:35px;
+    height:70px;
+}
+div#maze_3 {
+    width:35px;
+    height:70px;
+}
+div#maze_4 {
+    width:135px;
+    height:35px;
+}
+div#maze_5 {
+    width:135px;
+    height:35px;
+}
+
+div#gameBegin {
+    background-color:#81FF81;
+    border:solid 1px black;
+    margin-top:1.5px;
+    margin-bottom:1.5px;
+    font-size:1.5em;
+    font-weight:500;
+    width:30px;
+    height:30px;
+}
+div#gameEnd {
+    background-color:#8684FF;
+    border:solid 1px black;
+    margin-top:1.5px;
+    margin-bottom:1.5px;
+    font-size:1.5em;
+    font-weight:500;
+    width:30px;
+    height:30px;
+    float:right;
+}
+
+
+div#wall_example {
+    width:60px;
+    height:15px;
+    border:solid 1px;
+    margin:0 auto;
+    margin-top:10px;
+    margin-bottom:10px;
+}

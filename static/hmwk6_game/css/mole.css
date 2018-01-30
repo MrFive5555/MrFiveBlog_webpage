@@ -1,0 +1,89 @@
+﻿div#title {
+    text-align:center;
+}
+
+div#sub-title {
+    text-align:center;
+}
+
+div#bar {
+    width:400px;
+    margin:0 auto;
+}
+div#bar div {
+    display:inline-block;
+}
+div#bar #startButton {
+    width:200px;
+    text-align:center;
+    border:solid 1px grey;
+    margin:10px 30px 0 0;
+}
+div#bar #state {
+    width:200px;
+    text-align:center;
+    border:solid 1px grey;
+    margin:10px 30px 10px 0;
+}
+div#bar #timeBar {
+    display:inline-block;
+    border:solid 1px grey;
+    width:100px;
+}
+div#bar #scoreBar {
+    display:inline-block;
+    border:solid 1px grey;
+    width:100px;
+}
+div#bar .posSpan {
+    display:inline-block;
+    width:50px;
+}
+
+div.hole {
+    border-radius:50%;
+    width:10px;
+    height:10px;
+    margin:4px;
+    border:solid 1px grey;
+    display:inline-block;
+}
+
+div.mole {
+    /*background:blue;*/
+    border-radius:50%;
+    width:9px;
+    height:9px;
+    margin:0px;
+    margin-left:0.4px;
+    margin-top:0.5px;
+    box-shadow:0 0 4px blue inset ;
+}
+
+.cantSee {
+    opacity:0;
+}
+
+.canSee {
+    opacity:1;
+}
+
+div#moleMap {
+    border-top:solid grey 1px;
+    border-bottom:solid grey 1px;
+    width:220px;
+    margin:0 auto;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+
+#introduction {
+    width:630px;
+    margin:0 auto;
+}
+
+img#background {
+    display:block;
+    width:600px;
+    margin:0 auto;
+}

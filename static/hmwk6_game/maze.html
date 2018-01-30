@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>maze</title>
+	<meta charset="utf-8" />
+  <link type="text/css" rel="stylesheet" href="css/maze.css" />
+  <script src="js/maze.js"></script>
+</head>
+<body>
+  <div id="title">The Amazing Mouse Maze!</div>
+  <div id="introduction">Move your mouse over the "S" to begin<br /></div>
+  <div id="result" class="canSee"></div>
+  <div id="maze_container">
+    <div class="wall" id="wall_1"></div><div class="wall" id="wall_2"></div><div class="wall" id="wall_3"></div><br />
+    <div class="wall" id="wall_4"></div><div id="wall_container"><div class="maze" id="maze_1"></div><br /><div class="maze" id="maze_2"></div><div class="wall" id="wall_5"></div><div class="maze" id="maze_3"></div></div><div class="wall" id="wall_6"></div><br />
+    <div class="maze" id="maze_4"><div id="gameBegin">S</div></div><div class="wall" id="wall_7"></div><div class="maze" id="maze_5"><div id="gameEnd">E</div></div><br />
+    <div class="wall" id="wall_8"></div><div class="wall" id="wall_9"></div><div class="wall" id="wall_10"></div><br />
+  </div>
+  <!--/ maze-container-->
+  <div id="note">The object of this game is to guide the mouse cursor through the start area and get to the end area.Be sure to avoid the walls:<div class="wall" id="wall_example"></div>Good luck!</div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+﻿#title {
+    width:50px;
+    margin: 0 auto;
+    font-size:2em;
+    font-weight:bold;
+}
+
+#center {
+    width:800px;
+    height:500px;
+    margin:0 auto;
+}
+
+#left {
+    width:350px;
+    display:inline-block;
+    text-align:center;
+}
+#left img {
+    transition:all 0.8s;
+    width:280px;
+    height:250px;
+}
+#left img:hover {
+    transition:all 0.8s;
+    width:350px;
+    height:330px;
+}
+
+#right {
+    transition:all 0.8s;
+    width:400px;
+    display:inline-block;
+    text-align:center;
+}
+#right img {
+    transition:all 0.8s;
+    width:330px;
+    height:300px;
+}
+#right img:hover {
+    transition:all 0.8s;
+    width:380px;
+    height:350px;
+}

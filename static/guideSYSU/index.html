@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>中山大学东校园地图</title>
+  <link rel="stylesheet" type="text/css" href="css/map.css">
+  <link rel="stylesheet" type="text/css" href="css/bar.css">
+  <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+  <script type="text/javascript" src="js/path.js"></script>
+  <script type="text/javascript" src="js/index.js"></script>
+</head>
+<body>
+  <div id="containor">
+    <h1 id="title">中山大学东校区游览引导</h1>
+    <div id="map_containor">
+      <div id="map_positionor">
+        <img id="map_background" src="pic/地图.jpg">
+        <ul>
+          <li class="place" title="中山像" id="中山像">
+            <div class="imgContainor bottom hide">
+              <h1>中山像</h1>
+              <img class="hide" src="pic/中山像.jpg"/>
+              点击图片返回
+            </div>
+          </li>
+          <li class="place" title="传设院" id="传设院">
+            <div class="imgContainor top hide">
+              <h1>传设院</h1>
+              <img class="hide" src="pic/传设院.jpg"/>
+              点击图片返回
+            </div>
+          </li>
+          <li class="place" title="假草运动场" id="假草运动场">
+            <div class="imgContainor top hide">
+              <h1>假草运动场</h1>
+              <img class="hide" src="pic/假草运动场.jpg"/>
+              点击图片返回
+            </div>
+          </li>
+          <li class="place" title="光电实验室" id="光电实验室">
+            <div class="imgContainor bottom hide">
+              <h1>光电实验室</h1>
+              <img class="hide" src="pic/光电实验室.jpg"/>
+              点击图片返回
+            </div>
+          </li>
+          <li class="place" title="公教楼" id="公教楼">
+            <div class="imgContainor bottom hide">
+              <h1>公教楼</h1>
+              <img class="hide" src="pic/公教楼.jpg"/>
+              点击图片返回
+            </div>
+          </li>
+          <li class="place" title="北门附近" id="北门附近">
+              <div class="imgContainor bottom hide">
+                <h1>北门附近</h1>
+                <img class="hide" src="pic/北门附近.jpg"/>
+                点击图片返回
+              </div>
+            </li>
+          <li class="place" title="南北实验楼" id="南北实验楼">
+            <div class="imgContainor bottom hide">
+              <h1>南北实验楼</h1>
+              <img class="hide" src="pic/南北实验楼.jpg"/>
+              点击图片返回
+            </div>
+          </li>
+          <li class="place" title="后山" id="后山">
+            <div class="imgContainor bottom hide">
+              <h1>后山</h1>
+              <img class="hide" src="pic/后山.jpg"/>
+              点击图片返回
+            </div>
+          </li>
+          <li class="place" title="图书馆" id="图书馆">
+            <div class="imgContainor bottom hide">
+              <h1>图书馆</h1>
+              <img class="hide" class="hide" src="pic/图书馆.jpg"/>
+              点击图片返回
+            </div>
+          </li>
+          <li class="place" title="学生宿舍区" id="学生宿舍区">
+            <div class="imgContainor top hide">
+              <h1>学生宿舍区</h1>
+              <img class="hide" src="pic/学生宿舍区.jpg"/>
+              点击图片返回
+            </div>
+          </li>
+          <li class="place" title="工学院" id="工学院">
+            <div class="imgContainor top hide">
+              <h1>工学院</h1>
+              <img class="hide" src="pic/工学院.jpg"/>
+              点击图片返回
+            </div>
+          </li>
+          <li class="place" title="牌坊" id="牌坊">
+            <div class="imgContainor bottom hide">
+              <h1>牌坊</h1>
+              <img class="hide" src="pic/牌坊.jpg">
+              点击图片返回
+            </div>
+          </li>
+          <li class="place" title="真草运动场" id="真草运动场">
+            <div class="imgContainor bottom hide">
+              <h1>真草运动场</h1>
+              <img class="hide" src="pic/真草运动场.jpg">
+              点击图片返回
+            </div>
+          </li>
+          <li class="place" title="行政楼" id="行政楼">
+            <div class="imgContainor bottom hide">
+              <h1>行政楼</h1>
+              <img class="hide" src="pic/行政楼.jpg"/>
+              点击图片返回
+            </div>
+          </li>
+          <li class="place" title="超算中心" id="超算中心">
+            <div class="imgContainor bottom hide">
+              <h1>超算中心</h1>
+              <img class="hide" src="pic/超算中心.jpg"/>
+              点击图片返回
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <ul id="Bar">
+      <li id="infoBar">
+        <h1>校园介绍</h1>
+        <div class="other">
+          <p>中山大学广州校区东校园位于广州大学城的东北端，旧称中山大学东校区，亦称中山大学大学城校区，和广东外语外贸大学同属第一组团，靠近广州地铁四号线大学北站。</p>
+          <p>东校区地理位置优越，南邻中心公园，东邻城市绿化带，总占地面积1.13平方公里，其中教学区87.5万平方米，生活区25.5万平方米。</p>
+          <p>一期工程共有29栋建筑，包括教学区12幢建筑，建筑面积达32万平方米，共有课室111间，座位14454个；生活区共17幢学生宿舍，建筑面积共11万平方米，可容纳 12456名学生入住。</p>
+          <p>校区规划的主体基本在第一期完成，二期工程计划建筑面积 3.25万平方米，包括多功能体育馆、动物实验中心和2幢学生宿舍。中山大学学生习惯戏称中山大学东校区为“中东”。</p>
+        </div>
+      </li>
+      <li id="guideBar" class="hide">
+        <h1>参观引导</h1>
+        <div class="other">
+          <form id="guideType">
+            <input type="radio" name="guideType" value="twoPoint" checked>导航
+            <input type="radio" name="guideType" value="servalPoint">路线设计
+          </form>
+          <div id="guideOption">
+            <form id="twoPoint">
+              从:
+              <select name="from">
+                <option value="中山像">中山像</option>
+                <option value="传设院">传设院</option>
+                <option value="假草运动场">假草运动场</option>
+                <option value="光电实验室">光电实验室</option>
+                <option value="公教楼">公教楼</option>
+                <option value="北门附近">北门附近</option>
+                <option value="南北实验楼">南北实验楼</option>
+                <option value="后山">后山</option>
+                <option value="图书馆">图书馆</option>
+                <option value="学生宿舍区">学生宿舍区</option>
+                <option value="工学院">工学院</option>
+                <option value="牌坊">牌坊</option>
+                <option value="真草运动场">真草运动场</option>
+                <option value="行政楼">行政楼</option>
+                <option value="超算中心">超算中心</option>
+              </select><br/><br/>
+              到:
+              <select name="to">
+                <option value="中山像">中山像</option>
+                <option value="传设院">传设院</option>
+                <option value="假草运动场">假草运动场</option>
+                <option value="光电实验室">光电实验室</option>
+                <option value="公教楼">公教楼</option>
+                <option value="北门附近">北门附近</option>
+                <option value="南北实验楼">南北实验楼</option>
+                <option value="后山">后山</option>
+                <option value="图书馆">图书馆</option>
+                <option value="学生宿舍区">学生宿舍区</option>
+                <option value="工学院">工学院</option>
+                <option value="牌坊">牌坊</option>
+                <option value="真草运动场">真草运动场</option>
+                <option value="行政楼">行政楼</option>
+                <option value="超算中心">超算中心</option>
+              </select><br/><br/>
+              出行方式:
+              <select name="by">
+                <option value="walk">步行</option>
+                <option value="car">汽车</option>
+              </select><br/>
+              <button type="button">获得路线</button>
+            </form>
+            <form id="servalPoint">
+              请选择希望游览的地方:<br/>
+              <input type="checkbox" name="pointToGo" value="中山像" checked>中山像<br/>
+              <input type="checkbox" name="pointToGo" value="传设院" checked>传设院<br/>
+              <input type="checkbox" name="pointToGo" value="假草运动场" checked>假草运动场<br/>
+              <input type="checkbox" name="pointToGo" value="光电实验室" checked>光电实验室<br/>
+              <input type="checkbox" name="pointToGo" value="公教楼" checked>公教楼<br/>
+              <input type="checkbox" name="pointToGo" value="北门附近" checked>北门附近<br/>
+              <input type="checkbox" name="pointToGo" value="南北实验楼" checked>南北实验楼<br/>
+              <input type="checkbox" name="pointToGo" value="后山" checked>后山<br/>
+              <input type="checkbox" name="pointToGo" value="图书馆" checked>图书馆<br/>
+              <input type="checkbox" name="pointToGo" value="学生宿舍区" checked>学生宿舍区<br/>
+              <input type="checkbox" name="pointToGo" value="工学院" checked>工学院<br/>
+              <input type="checkbox" name="pointToGo" value="牌坊" checked>牌坊<br/>
+              <input type="checkbox" name="pointToGo" value="真草运动场" checked>真草运动场<br/>
+              <input type="checkbox" name="pointToGo" value="行政楼" checked>行政楼<br/>
+              <input type="checkbox" name="pointToGo" value="超算中心" checked>超算中心<br/><br/>
+              出发点:
+              <select name="from">
+                  <option value="中山像">中山像</option>
+                  <option value="传设院">传设院</option>
+                  <option value="假草运动场">假草运动场</option>
+                  <option value="光电实验室">光电实验室</option>
+                  <option value="公教楼">公教楼</option>
+                  <option value="北门附近">北门附近</option>
+                  <option value="南北实验楼">南北实验楼</option>
+                  <option value="后山">后山</option>
+                  <option value="图书馆">图书馆</option>
+                  <option value="学生宿舍区">学生宿舍区</option>
+                  <option value="工学院">工学院</option>
+                  <option value="牌坊">牌坊</option>
+                  <option value="真草运动场">真草运动场</option>
+                  <option value="行政楼">行政楼</option>
+                  <option value="超算中心">超算中心</option>
+                </select><br/>
+              <button type="button">获得路线</button>
+            </form>
+            <div id="guideInfo" class="hide">
+              <p id="pathInfo"></p>
+              <p id="lengthInfo"></p>
+              <button type="button">关闭路线</button>
+            </div>
+          </div>
+        </div>        
+      </li>
+    </ul>
+    
+  </div>
+  
+</body>
+</html>

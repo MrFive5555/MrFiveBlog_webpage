@@ -1,0 +1,185 @@
+#containor {
+  height: 1140px;
+  width: 1250px;
+  margin: 0 auto;
+}
+
+h1#title {
+  text-align: center;
+}
+
+#map_containor {
+  height: 1040px;
+  width: 920px;
+  float: left;
+  margin-right: 20px;
+}
+
+#map_positionor {
+  position: absolute;
+}
+
+#map_background {
+  height: 1040px;
+  width: 920px;
+  position: absolute;
+  top:0;
+  left: 0;
+  opacity: 0.7;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li.place {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: rgb(170, 243, 237);
+  position: absolute;
+
+  box-shadow: 0 0 7px 5px rgb(8, 105, 231) inset;
+  transition: all 0.5s;
+}
+li.place.hide {
+  height: 0;
+  width: 0;
+  transform: translate(10px, 10px);
+}
+
+li.place:hover {
+  transform: translate(-8px, -8px);
+  width: 36px;
+  height: 36px;
+}
+li.place.hide:hover {
+  width: 0px;
+  height: 0px;
+  transform: translate(10px, 10px);
+}
+
+li.twinkle {
+  width: 30px;
+  height: 30px;
+  transform: translate(-5px, -5px);  
+  animation-name:  li_Twinkle;
+  animation-duration: 0.8s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes li_Twinkle {
+  0% {
+    box-shadow: 0 0 7px 3px rgb(8, 105, 231) inset;
+  }
+  50% {
+    box-shadow: 0 0 7px 6px rgb(8, 105, 231) inset;
+  }
+  100% {
+    box-shadow: 0 0 7px 3px rgb(8, 105, 231) inset;
+  }
+}
+
+li.place img {
+  transition: all 0.5s;
+  opacity: 1;
+  height: 300px;
+  width: 300px;
+}
+li.place img.hide {
+  opacity: 0;
+  height: 0px;
+  width: 0px;
+}
+
+li.place div.imgContainor {
+  height: 450px;
+  width: 300px;
+  padding:20px;
+  background-color: rgb(0, 89, 255);
+  color: white;
+  overflow: visible;
+  opacity: 1;
+  text-align: center;
+  transition: all 0.5s;
+}
+li.place div.imgContainor.hide {
+  height: 0;
+  width: 0;
+  padding:0;
+  overflow: hidden;
+  opacity: 0;
+}
+
+li.place div.imgContainor.top {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+li.place div.imgContainor.bottom {
+  position: absolute;
+  bottom: -400px;
+  left: 20px;
+}
+
+li.place#中山像 {
+  top: 260px;
+  left: 589px;
+}
+li.place#传设院 {
+  top: 470px;
+  left: 400px;
+}
+li.place#假草运动场 {
+  top: 580px;
+  left: 410px;
+}
+li.place#光电实验室 {
+  top: 130px;
+  left: 800px;
+} 
+li.place#公教楼 {
+  top: 285px;
+  left: 700px;
+}
+li.place#北门附近 {
+  top: 140px;
+  left: 655px;
+}
+li.place#南北实验楼 {
+  top: 420px;
+  left: 350px;
+}
+li.place#后山 {
+  top: 375px;
+  left: 379px;
+}
+li.place#图书馆 {
+  top: 410px;
+  left: 590px;
+}
+li.place#学生宿舍区 {
+  top: 880px;
+  left: 550px;
+}
+li.place#工学院 {
+  top: 580px;
+  left: 230px;
+}
+li.place#牌坊 {
+  top: 100px;
+  left: 590px;
+}
+li.place#真草运动场 {
+  top: 462px;
+  left: 695px;
+}
+li.place#行政楼 {
+  top: 278px;
+  left: 545px;
+}
+li.place#超算中心 {
+  top: 170px;
+  left: 700px;
+}
