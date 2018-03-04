@@ -162,7 +162,6 @@ export default {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
   margin: 0 auto;
   position: absolute;
@@ -186,6 +185,7 @@ export default {
   background-color: rgb(68, 81, 105);
   color: white;
   margin: 0;
+  text-align: center;
 }
 
 #menuHead {

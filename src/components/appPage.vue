@@ -73,6 +73,7 @@ export default {
   right: 0;
   padding: 0;
   margin: 0;
+  text-align: center;
 }
 h1 {
   color: white;

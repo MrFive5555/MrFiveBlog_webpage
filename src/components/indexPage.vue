@@ -29,6 +29,7 @@ export default {
   left: 0;
   right: 0;
   color: white;
+  text-align: center;
 }
 h1 {
   font-size: 4em;

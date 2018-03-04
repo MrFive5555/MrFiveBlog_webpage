@@ -85,6 +85,7 @@ export default {
   right: 0;
   height: 100%;
   margin: 0;
+  text-align: center;
 }
 
 .Item {

@@ -1,7 +1,7 @@
 /* 博客 */
 
 <template>
-  <div id="containor" :style="{ height : newHeigh + 'px'}">
+  <div id="containor" class="clearfix">
     <!-- 博客列表 -->
     <div id="blogList" v-if="state=='showList'">
       <div class="loading" v-if="loading">正在加载</div>

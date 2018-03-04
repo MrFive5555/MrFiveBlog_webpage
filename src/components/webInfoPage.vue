@@ -36,6 +36,7 @@ export default {
   color: white;
   width: 1050px;
   margin: 0 auto;
+  text-align: center;
 }
 
 h1 {

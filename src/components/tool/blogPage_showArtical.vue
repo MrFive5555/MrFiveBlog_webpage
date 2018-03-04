@@ -1,9 +1,9 @@
 /* 展示文章的组件 */
-
+/* :style="{height : newHeigh}" */
 <template>
   <div
     id="showArtical"
-    :style="{height : newHeigh}"
+    class="clearfix"
     v-if="!loading">
     <h1 id="blogTitle">{{ artical.title }}</h1>
     <div class="right-align">
@@ -16,42 +16,46 @@
     <div class="loading" v-if="loading">正在加载</div>
     <!-- 正文 -->
     <div id="artical">
-      <div v-if="artical.tags.length != 0">
+      <div v-if="artical.tags.length != 0" class="tagsContainor">
         标签:<div class="tag" v-for="tag in artical.tags" :key="tag.id">{{ tag }}</div>
       </div>
       <div class="right-align">
         发表时间:{{ formatDate(artical.date) }}<br>
       </div>
-      <div
-        id="markdown-containor"
-        :style="{ height : markdownHeigh + 'px'}"
-        v-if="!loading">
-        <markdown
-            :mdValuesP="artical.content"
-            :fullPageStatusP="false"
-            :editStatusP="false"
-            :previewStatusP="true"
-            :navStatusP="false"
-            :icoStatusP="false"
-            @childevent="childEventHandler"
-            ></markdown>
-      </div>
     </div>
+    <div id="mdHtml" v-html="mdHtml"></div>
     <!-- 评论区(600px) -->
     <review-bar
       :user="user"
       :Title="this.artical.title"
       :numPerPage="5"
+      @changeHeigh="changeHeigh"
     ></review-bar>
   </div>
 </template>
 
 <script>
 import axios from 'axios'
+import marked from 'marked'
+import hljs from '../../../static/js/highlight.min.js'
+
 import config from '../../config'
 import smallButton from './smallButton'
-import markdown from './markdown'
 import reviewBar from './reviewBar'
+
+marked.setOptions({
+  renderer: new marked.Renderer(),
+  gfm: true,
+  tables: true,
+  breaks: false,
+  pedantic: false,
+  sanitize: true,
+  smartLists: true,
+  smartypants: false,
+  highlight: function (code) {
+    return hljs.highlightAuto(code).value
+  }
+})
 
 export default {
   name: 'blogPageShowArtical',
@@ -68,21 +72,11 @@ export default {
     }
   },
   computed: {
-    markdownHeigh () {
-      if (this.artical.content.match(/\n/g) == null) {
-        return 100
-      } else {
-        return this.artical.content.match(/\n/g).length * 30
-      }
-    },
-    newHeigh () {
-      var _newHeigh = this.markdownHeigh + this.reviewHeigh + 500
-      if (_newHeigh > 1000) {
-        this.$emit('changeHeigh', _newHeigh)
-      } else {
-        _newHeigh = 1000
-      }
-      return _newHeigh
+    mdHtml () {
+      console.log(this.artical.content)
+      return marked(this.artical.content, {
+        sanitize: true
+      })
     }
   },
   props: ['blogName', 'user'],
@@ -98,10 +92,11 @@ export default {
         (date.getMonth() + 1) + '/' +
         date.getDate()
     },
-    // 监听事件，接收子组件传过来的数据
-    childEventHandler: function (res) {
-    // res会传回一个data,包含属性mdValue和htmlValue，具体含义请自行翻译
-      this.msg = res
+    changeHeigh () {
+      var _newHeigh = document.getElementById('showArtical').clientHeight
+      if (_newHeigh > 1000) {
+        this.$emit('changeHeigh', _newHeigh)
+      }
     }
   },
   created () {
@@ -113,6 +108,10 @@ export default {
         this.artical = blog.data
         this.loading = false
         this.state = 'showArtical'
+
+        setTimeout(() => {
+          this.changeHeigh()
+        }, 300)
       })
       .catch((err) => {
         console.log(err)
@@ -124,17 +123,22 @@ export default {
     this.$emit('changeHeigh', 1000)
   },
   components: {
-    smallButton, markdown, reviewBar
+    smallButton, reviewBar
   }
 }
 </script>
 
 <style scoped>
-
-#showArtical h1 {
+#blogTitle {
   font-size: 3em;
   margin: 30px 0 20px 0;
   width: 1100px;
+  text-align: center;
+  margin: 30px auto;
+}
+
+.tagsContainor {
+  width: 100%;
 }
 
 .tag {
@@ -152,17 +156,23 @@ export default {
   color: rgb(50, 91, 126);
 }
 #artical {
-  width:1100px;
-}
-#markdown-containor {
-  width: 1000px;
-  height: 800px;
-  margin: 0 auto;
-  text-align: left;
+  text-align: center;
 }
 
 .right-align {
   text-align: right;
   padding-right: 100px;
+}
+
+#mdHtml {
+  margin: 0 5% 0 5%;
+}
+
+.clearfix::before, .clearfix::after {
+    content:"";
+    display:table;
+}
+.clearfix::after {
+    clear:both;
 }
 </style>

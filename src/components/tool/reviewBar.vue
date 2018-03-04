@@ -1,5 +1,7 @@
+/* 评论区 */
+
 <template>
-  <div id="review">
+  <div id="reviewBar" class="clearfix">
     <h2>评论</h2>
     <textarea
       rows="5" cols="100"
@@ -7,7 +9,7 @@
       @input="inputCheck">
     </textarea><br>
     <small-button @click.native="sendReview()">发表</small-button>
-    <div class="loading" v-if="loading">正在上传</div>
+    <div class="loading" v-if="loading">正在加载/上传</div>
     <div v-if="reviewList.length == 0">还没有评论~</div>
     <ul v-else>
       <!-- 一条评论 -->
@@ -65,6 +67,10 @@ export default {
       .then((reviewList) => {
         this.reviewList = reviewList.data
         this.loading = false
+
+        setTimeout(() => {
+          this.$emit('changeHeigh')
+        })
       })
       .catch((err) => {
         console.log(err)
@@ -160,7 +166,8 @@ export default {
 </script>
 
 <style scoped>
-#review {
+#reviewBar {
+  text-align: center;
   color: white;
 }
 .oneReview {

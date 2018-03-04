@@ -28,6 +28,9 @@ export default {
 </script>
 
 <style scoped>
+#containor {
+  text-align: center;
+}
 h1 {
   color: white;
 }
