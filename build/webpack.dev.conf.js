@@ -41,14 +41,15 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     // proxy: config.dev.proxyTable,
     proxy: {
       '*': {
-        target: 'http://127.0.0.1:8081',
+        target: 'http://193.112.11.40',
+        // target: 'http://127.0.0.1:8081',
         secure: false,
         changeOrigin: true
       }
     },
     quiet: true, // necessary for FriendlyErrorsPlugin
     watchOptions: {
-      poll: config.dev.poll,
+      poll: config.dev.poll
     }
   },
   plugins: [
@@ -92,8 +93,8 @@ module.exports = new Promise((resolve, reject) => {
           messages: [`Your application is running here: http://${devWebpackConfig.devServer.host}:${port}`],
         },
         onErrors: config.dev.notifyOnErrors
-        ? utils.createNotifierCallback()
-        : undefined
+          ? utils.createNotifierCallback()
+          : undefined
       }))
 
       resolve(devWebpackConfig)

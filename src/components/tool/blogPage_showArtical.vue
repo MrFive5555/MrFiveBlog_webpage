@@ -1,3 +1,5 @@
+/* 展示文章的组件 */
+
 <template>
   <div
     id="showArtical"

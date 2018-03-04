@@ -1,14 +1,17 @@
+/* 博客 */
+
 <template>
   <div id="containor" :style="{ height : newHeigh + 'px'}">
     <!-- 博客列表 -->
     <div id="blogList" v-if="state=='showList'">
-      <h1>我的博客</h1>
       <div class="loading" v-if="loading">正在加载</div>
       <artical-list
         v-else
         @clickTitle="clickTitle"
         :List="blogList">
+          <h1 slot="header">我的博客</h1>
           <small-button
+            slot="footer"
             v-if="user.isAdmin"
             @click.native="changePage('write')">
             写博客
@@ -106,6 +109,9 @@ export default {
       if (_state === 'showArtical') {
         this.blogName = optArtical
       }
+      if (_state === 'showList') {
+        this.showBlogList()
+      }
     },
     clickTitle (title) {
       this.changePage('showArtical', title)
@@ -135,11 +141,13 @@ export default {
   position: absolute;
   color: white;
   height: 1000px;
-  width: 1100px;
+  left: 0;
+  right: 0;
 }
 
 #blogList {
   width:1100px;
+  margin: 0 auto;
 }
 
 input {

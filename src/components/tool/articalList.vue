@@ -1,8 +1,12 @@
+/* 文章列表的组件 */
+
 <template>
-  <ul>
+  <ul id="containor">
     <div id="head">
+      <!-- 标题 -->
+      <slot name="header"></slot>
       <label for="searchBox">搜索</label><input id="searchBox" v-model="searchWord">
-      <slot></slot>
+      <slot name="footer"></slot>
     </div>
     <div v-if="subBlogList.length != 0">
       <!-- 文章列表 -->
@@ -15,15 +19,13 @@
         <div class="Date">{{ formatDate(item.date) }}</div>
       </li>
       <!-- 翻页按钮 -->
-      <div class="atBottom">
-        <ul id="pageChoose" v-if="pageCount >= 1">翻页
-          <li
-            v-for="item in pageCount"
-            :class="{ active : item == page}"
-            :key="item.id"
-            @click="() => page = item">{{ item }}</li>
-        </ul>
-      </div>
+      <ul id="pageChoose" v-if="pageCount >= 1">翻页
+        <li
+          v-for="item in pageCount"
+          :class="{ active : item == page}"
+          :key="item.id"
+          @click="() => page = item">{{ item }}</li>
+      </ul>
     </div>
     <div v-else>无相关文章</div>
   </ul>
@@ -74,10 +76,15 @@ export default {
 </script>
 
 <style scoped>
-ul {
+#containor {
   list-style: none;
   padding: 0 40px 0 40px;
   color: white;
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 100%;
+  margin: 0;
 }
 
 .Item {
@@ -91,7 +98,7 @@ ul {
 }
 
 .title {
-  width:350px;
+  width:450px;
   margin: 0 auto;
   font-size: 1.5em
 }
@@ -108,7 +115,10 @@ ul {
 #pageChoose {
   border-top: 2px solid white;
   padding: 20px 40px 20px 40px;
-  width: 940px;
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  bottom: 0;
 }
 #pageChoose li {
   display: inline-block;
@@ -123,12 +133,6 @@ ul {
 }
 #pageChoose li.active {
   background-color: rgb(68, 81, 105);
-}
-
-.atBottom {
-  position: absolute;
-  bottom: 0;
-  width: 1060px;
 }
 
 #head {

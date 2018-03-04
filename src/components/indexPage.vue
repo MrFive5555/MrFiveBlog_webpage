@@ -1,3 +1,5 @@
+/* 主页 */
+
 <template>
   <div id="containor">
     <img src="../assets/cactus.jpg"><br>
@@ -23,7 +25,9 @@ export default {
 #containor {
   padding-top: 150px;
   height: 700px;
-  width: 1100px;
+  position: absolute;
+  left: 0;
+  right: 0;
   color: white;
 }
 h1 {

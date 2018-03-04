@@ -1,3 +1,5 @@
+/* 写博客的组件 */
+
 <template>
   <div id="write">
     <h1>文章发表</h1>
@@ -13,7 +15,18 @@
         返回列表
       </small-button>
     </div>
-    <textarea rows="40" cols="130" v-model="artical.content"></textarea><br>
+    <div id="writeArea">
+      <!-- <textarea rows="40" cols="130" v-model="artical.content"></textarea><br> -->
+      <markdown
+            :mdValuesP="''"
+            :fullPageStatusP="false"
+            :editStatusP="true"
+            :previewStatusP="true"
+            :navStatusP="true"
+            :icoStatusP="true"
+            @childevent="childEventHandler"
+            ></markdown>
+    </div>
     <div class="loading" v-if="loading">正在上传</div>
     <small-button @click.native="uploadBlog()">发表</small-button>
   </div>
@@ -43,9 +56,6 @@ export default {
   methods: {
     // 发表博客
     uploadBlog () {
-      console.log(this.tagStr)
-      console.log(this.tagStr.split(' '))
-      console.log(this.artical.tags)
       this.loading = true
       this.artical.tags = []
       for (let tag of (this.tagStr.split(' '))) {
@@ -73,7 +83,7 @@ export default {
     // 监听事件，接收子组件传过来的数据
     childEventHandler: function (res) {
     // res会传回一个data,包含属性mdValue和htmlValue，具体含义请自行翻译
-      this.msg = res
+      this.artical.content = res.mdValue
     }
   },
   components: {
@@ -90,5 +100,13 @@ export default {
 
 input {
   color: black;
+}
+
+#writeArea {
+  color: black;
+  margin: 30px auto;
+  width: 950px;
+  height: 700px;
+  text-align: left;
 }
 </style>

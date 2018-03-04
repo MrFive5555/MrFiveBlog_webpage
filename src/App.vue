@@ -165,23 +165,26 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin: 0 auto;
-  width: 1450px;
+  position: absolute;
+  left: 0;
+  right: 0;
 }
 
 #mainPage {
-  float: left;
-  width: 700px;
   background-color: rgb(50, 91, 126);
-  width: 1100px;
+  position: absolute;
+  left: 300px;
+  right: 0;
 }
 
 #menu {
   width: 300px;
+  position: absolute;
+  left: 0;
   list-style: none;
   padding: 0;
   background-color: rgb(68, 81, 105);
   color: white;
-  float: left;
   margin: 0;
 }
 

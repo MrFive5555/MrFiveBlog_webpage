@@ -1,34 +1,34 @@
 <template>
   <div id="containor">
-    <h1 v-if="page==='list'">web小应用</h1>
     <artical-list
       :List="list"
       @clickTitle="changePage"
       v-if="page==='list'">
+      <h1 v-if="page==='list'" slot="header">web小应用</h1>
     </artical-list>
-    <div  v-else-if="page=='打地鼠游戏'">
+    <div v-else-if="page=='打地鼠游戏'">
       <h1>打地鼠游戏</h1>
-      <small-button @click.native="page='list'">返回列表</small-button><br>
+      <div class="close" @click="page='list'">&times;</div><br>
       <iframe src="../static/hmwk6_game/mole.html"></iframe>
     </div>
     <div v-else-if="page=='迷宫游戏'">
       <h1>迷宫游戏</h1>
-      <small-button @click.native="page='list'">返回列表</small-button><br>
+      <div class="close" @click="page='list'">&times;</div><br>
       <iframe src="../static/hmwk6_game/maze.html"></iframe>
     </div>
     <div v-else-if="page=='拼图游戏'">
       <h1>拼图游戏</h1>
-      <small-button @click.native="page='list'">返回列表</small-button><br>
+      <div class="close" @click="page='list'">&times;</div><br>
       <iframe src="../static/hmwk7_fifteen_puzzle/puzzle.html"></iframe>
     </div>
     <div v-else-if="page=='校园导览'" class="fullScreen">
       <h1>校园导览</h1>
-      <small-button @click.native="page='list'">返回列表</small-button><br>
+      <div class="close" @click="page='list'">&times;</div><br>
       <iframe src="../static/guideSYSU/index.html"></iframe>
     </div>
     <div v-else-if="page=='小游戏:大沙漠'" class="fullScreen">
       <h1>小游戏:大沙漠</h1>
-      <small-button @click.native="page='list'">返回列表</small-button><br>
+      <div class="close" @click="page='list'">&times;</div><br>
       <iframe src="../static/game:DeadSand/index.html"></iframe>
     </div>
     <div v-else>找不到相关资源</div>
@@ -68,8 +68,11 @@ export default {
 <style scoped>
 #containor {
   position: absolute;
-  width: 1100px;
-  height: 1000px;
+  height: 100%;
+  left: 0;
+  right: 0;
+  padding: 0;
+  margin: 0;
 }
 h1 {
   color: white;
@@ -92,5 +95,18 @@ iframe {
 .fullScreen iframe {
   width: 1400px;
   height: 1400px;
+}
+
+.close {
+  position: fixed;
+  width:30px;
+  height: 30px;
+  top: 3%;
+  right: 3%;
+  color: white;
+  font-size: 3em;
+}
+.close:hover {
+  font-size: 3.5em;
 }
 </style>
